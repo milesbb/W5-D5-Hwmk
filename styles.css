@@ -68,6 +68,7 @@ main > div:first-of-type > div:first-of-type {
     border-radius: 0.3rem 0rem 0rem 0.3rem;
     border: 1px solid lightgray;
     margin-right: 0rem;
+    padding-left: 1rem;
 }
 
 .blueButton {
@@ -76,6 +77,27 @@ main > div:first-of-type > div:first-of-type {
     border-radius: 0.3rem;
     border: none;
     height: 2.3rem;
+    transition: background-color 0.3s;
+}
+
+.blueButton:hover {
+    background-color: #4769d6;
+}
+
+.blueButton:active {
+    background-color: #1c2a59;
+}
+
+.greyOut {
+    background-color: gray;
+    color: white;
+    border-radius: 0.3rem;
+    border: none;
+    height: 2.3rem;
+}
+
+.greyOut:hover {
+    cursor: not-allowed;
 }
 
 #memberAddButton {
@@ -106,12 +128,30 @@ main > div:first-of-type > div:first-of-type {
     background-color: #4769d6;
     width: 28.3rem;
     margin-top: 1rem;
+    transition: background-color 0.3s;
+}
+
+#assign:hover {
+    background-color: #24356c;
+}
+
+#assign:active {
+    background-color: #111b3a;
 }
 
 #reset {
     background-color: #b93f46;
     width: 4rem;
     margin-top: 1rem;
+    transition: background-color 0.3s;
+}
+
+#reset:hover {
+    background-color: #852a2f;
+}
+
+#reset:active {
+    background-color: #5a2023;
 }
 
 .groups {
@@ -121,6 +161,11 @@ main > div:first-of-type > div:first-of-type {
     display: flex;
     flex-flow: row wrap;
     gap: 1rem;
+}
+
+.groupName {
+    width: 80%;
+    word-wrap: break-word;
 }
 
 .cardBody {
@@ -139,4 +184,9 @@ h2 {
 
 hr {
     background: lightgray;
+}
+
+.membersDisplayName {
+    font-size: 0.8rem;
+    padding-left: 1rem;
 }
