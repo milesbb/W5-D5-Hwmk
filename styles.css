@@ -126,7 +126,7 @@ main > div:first-of-type > div:first-of-type {
 
 #assign {
     background-color: #4769d6;
-    width: 22.4rem;
+    width: 13.4rem;
     margin-top: 1rem;
     transition: background-color 0.3s;
 }
@@ -154,6 +154,21 @@ main > div:first-of-type > div:first-of-type {
     background-color: #5a2023;
 }
 
+#removeOne {
+    background-color: #b93f46;
+    width: 10rem;
+    margin-top: 1rem;
+    transition: background-color 0.3s;
+}
+
+#removeOne:hover {
+    background-color: #852a2f;
+}
+
+#removeOne:active {
+    background-color: #5a2023;
+}
+
 .groups {
     width: 34rem;
     min-height: 20rem;
@@ -166,6 +181,25 @@ main > div:first-of-type > div:first-of-type {
 .groupName {
     width: 80%;
     word-wrap: break-word;
+    transition: background-color 0.3s;
+    border-radius: 0.3rem;
+}
+
+.groupName:hover {
+    background-color: #df8488;
+    color: white;
+    border-radius: 0.3rem;
+}
+
+.groupName:active {
+    background-color: #6c2024;
+    color: white;
+    border-radius: 0.3rem;
+}
+
+.tableSelected {
+    background-color: #b93f46;
+    color: white;
 }
 
 .cardBody {
@@ -206,3 +240,4 @@ hr {
 .selected {
     background-color: lightblue;
 }
+
