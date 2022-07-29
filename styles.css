@@ -126,7 +126,7 @@ main > div:first-of-type > div:first-of-type {
 
 #assign {
     background-color: #4769d6;
-    width: 28.3rem;
+    width: 22.4rem;
     margin-top: 1rem;
     transition: background-color 0.3s;
 }
@@ -184,9 +184,25 @@ h2 {
 
 hr {
     background: lightgray;
+    margin: 0rem;
 }
 
 .membersDisplayName {
     font-size: 0.8rem;
     padding-left: 1rem;
+    transition: background-color 0.3s;
+    margin: 0rem;
+    padding: 0.7rem;
+}
+
+.membersDisplayName:hover {
+    background-color: rgb(218, 233, 238);
+}
+
+.membersDisplayName:active {
+    background-color: rgb(79, 109, 118);
+}
+
+.selected {
+    background-color: lightblue;
 }

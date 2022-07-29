@@ -49,6 +49,13 @@ ADD_MEMBER.addEventListener("click", () => {
     const NEW_MEMBER = document.createElement("p");
     NEW_MEMBER.innerText = MEMBER_INPUT;
     NEW_MEMBER.classList.add("membersDisplayName");
+    NEW_MEMBER.addEventListener("click", () => {
+        if (NEW_MEMBER.classList.contains("selected")) {
+            NEW_MEMBER.classList.remove("selected");
+        } else {
+            NEW_MEMBER.classList.add("selected");
+        }
+    })
     document.getElementById("memberAddInput").value = "";
     MEMBERS_DISPLAY.appendChild(NEW_MEMBER);
     const NEW_LINE = document.createElement("hr");
@@ -120,3 +127,67 @@ ASSIGN.addEventListener("click", () => {
     }
   }
 });
+
+const ASSIGN_ONE = document.getElementById("assignOne");
+
+ASSIGN_ONE.addEventListener("click", () => {
+    const CURRENT_MEMBERS = document.getElementsByClassName("selected");
+    const ALL_CARDS = document.getElementsByClassName("cardBody");
+    let teamsNumber = parseInt(
+      document.getElementById("teamNoSpan").innerText,
+      10
+    );
+    if (teamsNumber < 1) {
+      alert("You need at least one team!");
+    } else {
+      let eachTeam = CURRENT_MEMBERS.length / teamsNumber;
+      if (decimalTest(eachTeam)) {
+        eachTeam = Math.floor(eachTeam);
+        let roundChecker = 0;
+        let roundCounter = 1;
+        for (let i = 0; i < teamsNumber; i++) {
+          for (let v = roundChecker; v < eachTeam * roundCounter; v++) {
+            const NEW_NAME = document.createElement("p");
+            NEW_NAME.classList.add("groupName");
+            NEW_NAME.innerText = CURRENT_MEMBERS[v].innerText;
+            ALL_CARDS[i].appendChild(NEW_NAME);
+            const NEW_LINE_C = document.createElement("hr");
+            ALL_CARDS[i].appendChild(NEW_LINE_C);
+          }
+          roundChecker += eachTeam;
+          roundCounter++;
+        }
+        const NEW_NAME = document.createElement("p");
+        NEW_NAME.classList.add("groupName");
+        NEW_NAME.innerText = CURRENT_MEMBERS[CURRENT_MEMBERS.length-1].innerText;
+        ALL_CARDS[ALL_CARDS.length-1].appendChild(NEW_NAME);
+        const NEW_LINE_C = document.createElement("hr");
+        ALL_CARDS[ALL_CARDS.length-1].appendChild(NEW_LINE_C);
+        for (let x = 0; x < CURRENT_MEMBERS.length; x++) {
+            const EX_LINES = document.querySelectorAll(".selector + hr");
+            CURRENT_MEMBERS[x].remove();
+            EX_LINES[x].remove();
+        }
+      } else {
+        let roundChecker = 0;
+        let roundCounter = 1;
+        for (let i = 0; i < teamsNumber; i++) {
+          for (let v = roundChecker; v < eachTeam * roundCounter; v++) {
+            const NEW_NAME = document.createElement("p");
+            NEW_NAME.classList.add("groupName");
+            NEW_NAME.innerText = CURRENT_MEMBERS[v].innerText;
+            ALL_CARDS[i].appendChild(NEW_NAME);
+            const NEW_LINE_C = document.createElement("hr");
+            ALL_CARDS[i].appendChild(NEW_LINE_C);
+          }
+          roundChecker += eachTeam;
+          roundCounter++;
+        }
+        for (let x = 0; x < CURRENT_MEMBERS.length; x++) {
+            const EX_LINES = document.querySelectorAll(".selector + hr");
+            CURRENT_MEMBERS[x].remove();
+            EX_LINES[x].remove();
+        }
+      }
+    }
+  });
